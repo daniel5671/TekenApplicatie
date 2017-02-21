@@ -1,8 +1,6 @@
 package drawing.domain;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
+
 public class Oval extends DrawingItem {
     private Point anchor;
     private double width;
@@ -27,6 +25,11 @@ public class Oval extends DrawingItem {
 
     public double getHeight() {
         return height;
+    }
+
+    @Override
+    public void paintUsing(Paintable paintable) {
+        paintable.paint(this);
     }
 
     public void setHeight(double height) {

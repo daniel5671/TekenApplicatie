@@ -1,8 +1,8 @@
 package drawing.domain;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
+
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 public class PaintedText extends DrawingItem {
     private String content;
     private String fontName;
@@ -44,6 +44,11 @@ public class PaintedText extends DrawingItem {
 
     public double getHeight() {
         return height;
+    }
+
+    @Override
+    public void paintUsing(Paintable paintable) {
+        throw new NotImplementedException();
     }
 
     public void setHeight(double height) {

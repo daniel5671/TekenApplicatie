@@ -3,9 +3,6 @@ package drawing.domain;
 import drawing.domain.Enums.Color;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
 public abstract class DrawingItem {
 
     private Color color;
@@ -28,6 +25,8 @@ public abstract class DrawingItem {
     public abstract double getWidth();
 
     public abstract double getHeight();
+
+    public abstract void paintUsing(Paintable paintable);
 
 
 }

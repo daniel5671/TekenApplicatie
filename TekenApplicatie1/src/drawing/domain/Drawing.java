@@ -1,13 +1,13 @@
 package drawing.domain;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.ArrayList;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
+
 public class Drawing {
     private String name;
-    private ArrayList<DrawingItem>items;
+    private ArrayList<DrawingItem>items = new ArrayList<>();
 
     public ArrayList<DrawingItem> getItems() {
         return items;
@@ -42,5 +42,15 @@ public class Drawing {
     public boolean deleteDrawing(DrawingItem item){
         items.remove(item);
         return true;
+    }
+
+    public boolean alterDrawing(DrawingItem item){
+        throw new NotImplementedException();
+    }
+
+    public void paintUsing(Paintable paintable){
+        for (DrawingItem item : items) {
+            item.paintUsing(paintable);
+        }
     }
 }

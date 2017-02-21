@@ -1,10 +1,10 @@
 package drawing.domain;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.util.ArrayList;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
+
 public class Polygon extends DrawingItem {
 
     private ArrayList<Point> vertices;
@@ -44,6 +44,11 @@ public class Polygon extends DrawingItem {
     @Override
     public double getHeight() {
         return 0;
+    }
+
+    @Override
+    public void paintUsing(Paintable paintable) {
+        paintable.paint(this);
     }
 
     @Override

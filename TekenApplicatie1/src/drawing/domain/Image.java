@@ -1,10 +1,10 @@
 package drawing.domain;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 import java.io.File;
 
-/**
- * Created by Daniel on 14-2-2017.
- */
+
 public class Image extends DrawingItem {
     private File file;
     private Point anchor;
@@ -37,6 +37,11 @@ public class Image extends DrawingItem {
 
     public double getHeight() {
         return height;
+    }
+
+    @Override
+    public void paintUsing(Paintable paintable) {
+        throw new NotImplementedException();
     }
 
     public void setHeight(double height) {
