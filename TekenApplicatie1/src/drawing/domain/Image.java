@@ -41,7 +41,7 @@ public class Image extends DrawingItem {
 
     @Override
     public void paintUsing(Paintable paintable) {
-        throw new NotImplementedException();
+        paintable.paint(this);
     }
 
     public void setHeight(double height) {

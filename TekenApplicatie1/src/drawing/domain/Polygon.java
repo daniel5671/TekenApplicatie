@@ -1,13 +1,12 @@
 package drawing.domain;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.ArrayList;
 
 
 public class Polygon extends DrawingItem {
 
-    private ArrayList<Point> vertices;
+    private ArrayList<Point> vertices ;
     private double weight;
 
     public double getWeight() {

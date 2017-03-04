@@ -1,7 +1,6 @@
 package drawing.domain;
 
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public class PaintedText extends DrawingItem {
     private String content;
@@ -48,7 +47,7 @@ public class PaintedText extends DrawingItem {
 
     @Override
     public void paintUsing(Paintable paintable) {
-        throw new NotImplementedException();
+        paintable.paint(this);
     }
 
     public void setHeight(double height) {

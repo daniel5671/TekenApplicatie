@@ -1,7 +1,6 @@
 package drawing.domain;
 
 import drawing.domain.Enums.Color;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 public abstract class DrawingItem {
 

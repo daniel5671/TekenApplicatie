@@ -4,13 +4,14 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.stage.Stage;
 
 public class DrawingTool extends javafx.application.Application {
+
+    private Drawing drawing;
+    private JavaFXPaintable paintable;
+    private javafx.scene.canvas.Canvas drawingCanvas;
+
     public DrawingTool(Drawing drawing) {
         this.drawing = drawing;
     }
-
-    private Drawing drawing;
-    JavaFXPaintable paintable;
-    javafx.scene.canvas.Canvas drawingCanvas;
 
     public JavaFXPaintable getPaintable() {
         return paintable;
@@ -19,8 +20,6 @@ public class DrawingTool extends javafx.application.Application {
     public void setPaintable(JavaFXPaintable paintable) {
         this.paintable = paintable;
     }
-
-
 
     @Override
     public void start(Stage primaryStage) throws Exception {
