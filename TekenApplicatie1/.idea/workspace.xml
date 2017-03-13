@@ -106,13 +106,13 @@
       <file leaf-file-name="DatabaseMediator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DatabaseMediator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="16" />
+            <state relative-caret-position="268">
+              <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1489407961915" expanded="true" signature="806:846" ph="select drawi... drawing" />
-                <marker date="1489407961915" expanded="true" signature="1381:1410" ph="INSERT INTO drawing... " />
-                <marker date="1489407961915" expanded="true" signature="1381:1420" ph="INSERT INTO drawing... " />
+                <marker date="1489408640339" expanded="true" signature="802:842" ph="select drawi... drawing" />
+                <marker date="1489408640339" expanded="true" signature="1377:1406" ph="INSERT INTO drawing... " />
+                <marker date="1489408640339" expanded="true" signature="1377:1416" ph="INSERT INTO drawing... " />
               </folding>
             </state>
           </provider>
@@ -773,12 +773,12 @@
       <workItem from="1488720688272" duration="2031000" />
       <workItem from="1488812212020" duration="157000" />
       <workItem from="1488875647153" duration="6728000" />
-      <workItem from="1489405625726" duration="2386000" />
+      <workItem from="1489405625726" duration="2984000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33428000" />
+    <option name="totallyTimeSpent" value="34026000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1322,13 +1322,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DatabaseMediator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="45" column="16" lean-forward="false" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="16" />
+        <state relative-caret-position="268">
+          <caret line="19" column="33" lean-forward="false" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1489407961915" expanded="true" signature="806:846" ph="select drawi... drawing" />
-            <marker date="1489407961915" expanded="true" signature="1381:1410" ph="INSERT INTO drawing... " />
-            <marker date="1489407961915" expanded="true" signature="1381:1420" ph="INSERT INTO drawing... " />
+            <marker date="1489408640339" expanded="true" signature="802:842" ph="select drawi... drawing" />
+            <marker date="1489408640339" expanded="true" signature="1377:1406" ph="INSERT INTO drawing... " />
+            <marker date="1489408640339" expanded="true" signature="1377:1416" ph="INSERT INTO drawing... " />
           </folding>
         </state>
       </provider>

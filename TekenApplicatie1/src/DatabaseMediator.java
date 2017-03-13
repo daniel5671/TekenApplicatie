@@ -17,7 +17,7 @@ public class DatabaseMediator implements PersistencyMediator {
     private void initConnection() throws SQLException {
         String dbUrl = "jdbc:mysql ://studmysql01.fhict.local";
         String user = "dbi347692";
-        String password = "dlq66whwhf";
+        String password = "------";
 
         con = DriverManager.getConnection(dbUrl,user,password);
     }
