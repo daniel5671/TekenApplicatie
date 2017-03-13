@@ -1,8 +1,11 @@
 package drawing.domain;
 
+import Interface.Paintable;
 import drawing.domain.Enums.Color;
 
-public abstract class DrawingItem {
+import java.io.Serializable;
+
+public abstract class DrawingItem implements Serializable {
 
     private Color color;
     private DrawingItem previousstate;

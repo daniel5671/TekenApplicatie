@@ -1,7 +1,11 @@
 package drawing.domain;
 
 
-public class Oval extends DrawingItem {
+import Interface.Paintable;
+
+import java.io.Serializable;
+
+public class Oval extends DrawingItem implements Serializable{
     private Point anchor;
     private double width;
     private double height;

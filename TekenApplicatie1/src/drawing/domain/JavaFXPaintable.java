@@ -1,6 +1,6 @@
 package drawing.domain;
 
-import drawing.domain.Paintable;
+import Interface.Paintable;
 import javafx.scene.canvas.GraphicsContext;
 
 public class JavaFXPaintable implements Paintable {

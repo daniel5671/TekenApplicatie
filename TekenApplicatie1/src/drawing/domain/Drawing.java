@@ -1,11 +1,13 @@
 package drawing.domain;
 
+import Interface.Paintable;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Drawing {
+public class Drawing implements Serializable{
     private String name;
     private ArrayList<DrawingItem>items = new ArrayList<>();
 

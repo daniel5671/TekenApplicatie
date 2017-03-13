@@ -1,8 +1,11 @@
 package drawing.domain;
 
 
+import Interface.Paintable;
 
-public class PaintedText extends DrawingItem {
+import java.io.Serializable;
+
+public class PaintedText extends DrawingItem implements Serializable {
     private String content;
     private String fontName;
     private Point anchor;

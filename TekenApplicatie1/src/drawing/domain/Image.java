@@ -1,11 +1,12 @@
 package drawing.domain;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import Interface.Paintable;
 
 import java.io.File;
+import java.io.Serializable;
 
 
-public class Image extends DrawingItem {
+public class Image extends DrawingItem implements Serializable {
     private File file;
     private Point anchor;
     private double width;
