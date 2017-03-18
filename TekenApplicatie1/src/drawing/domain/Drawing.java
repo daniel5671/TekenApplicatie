@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Drawing implements Serializable{
+public class Drawing extends DrawingItem implements Serializable{
     private String name;
     private ArrayList<DrawingItem>items = new ArrayList<>();
 
@@ -48,6 +48,21 @@ public class Drawing implements Serializable{
 
     public boolean alterDrawing(DrawingItem item){
         throw new NotImplementedException();
+    }
+
+    @Override
+    public Point getAnchor() {
+        return null;
+    }
+
+    @Override
+    public double getWidth() {
+        return 0;
+    }
+
+    @Override
+    public double getHeight() {
+        return 0;
     }
 
     public void paintUsing(Paintable paintable){

@@ -15,9 +15,9 @@ public class DatabaseMediator implements PersistencyMediator {
     }
 
     private void initConnection() throws SQLException {
-        String dbUrl = "jdbc:mysql ://studmysql01.fhict.local";
+        String dbUrl = "jdbc:mysql://studmysql01.fhict.local/dbi347692";
         String user = "dbi347692";
-        String password = "------";
+        String password = "----------";
 
         con = DriverManager.getConnection(dbUrl,user,password);
     }
@@ -25,8 +25,9 @@ public class DatabaseMediator implements PersistencyMediator {
     @Override
     public Drawing load(String nameDrawing) throws SQLException, IOException, ClassNotFoundException {
 
+        initConnection();
         mystmt = con.createStatement();
-        ResultSet result = mystmt.executeQuery("select drawing from drawing where id = 1");
+        ResultSet result = mystmt.executeQuery("select drawing from drawing where id = 2");
         byte[] drawingInBytes;
 
         if (result.next()){
@@ -36,11 +37,13 @@ public class DatabaseMediator implements PersistencyMediator {
             Drawing drawing = (Drawing) objectinputstream.readObject();
             return drawing;
         }
+        return null;
     }
 
     @Override
     public boolean save(Drawing drawing) throws SQLException, IOException {
 
+        initConnection();
         String sql = "INSERT INTO drawing (drawing) values(?)";
 
         PreparedStatement statement = con.prepareStatement(sql);
@@ -51,8 +54,9 @@ public class DatabaseMediator implements PersistencyMediator {
         byte[] drawingInBytes = byteoutputstream.toByteArray();
 
         ByteArrayInputStream bytearrayinputsream = new ByteArrayInputStream(drawingInBytes);
-
-        ;
+        statement.setBinaryStream(1, bytearrayinputsream);
+        statement.executeUpdate();
+        return true;
     }
 
     @Override

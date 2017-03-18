@@ -2,7 +2,9 @@ import Interface.PersistencyMediator;
 import drawing.domain.Drawing;
 import drawing.domain.DrawingItem;
 import drawing.domain.JavaFXPaintable;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import drawing.domain.*;
 import javafx.application.Application;
@@ -19,6 +21,7 @@ public class DrawingTool extends Application{
     private Drawing drawing;
     private JavaFXPaintable paintable;
     private javafx.scene.canvas.Canvas drawingCanvas;
+    private DatabaseMediator databaseMediator;
 
     public DrawingTool(Drawing drawing) {
         this.drawing = drawing;
@@ -33,9 +36,12 @@ public class DrawingTool extends Application{
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+
         Canvas canvas = new Canvas(500,500);
-        // Drawing drawing = new Drawing();
+
+        Drawing drawing = new Drawing();
         SerializationMediator serializationMediator = new SerializationMediator();
+        DatabaseMediator databaseMediator = new DatabaseMediator();
 
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
@@ -43,8 +49,8 @@ public class DrawingTool extends Application{
         primaryStage.setTitle("TekenApplicatie");
         Group root = new Group();
 
-        Drawing drawing = serializationMediator.load("drawing.ser");
-        /*
+        //Drawing drawing = serializationMediator.load("drawing.ser");
+/*
         ArrayList<Point>points = new ArrayList<>();
         points.add(new Point(100, 100));
         points.add(new Point(200, 100));
@@ -61,7 +67,11 @@ public class DrawingTool extends Application{
         drawing.addDrawing(polygon);
         drawing.addDrawing(paintedtext);
         drawing.addDrawing(image);
-        */
+*/
+
+        //PaintedText opdracht4 = new PaintedText("(=D1)", "Ariel", new Point(150,150),40,50);
+        //drawing.addDrawing(opdracht4);
+        drawing = databaseMediator.load("hallo");
         root.getChildren().add(canvas);
 
         this.setPaintable(new JavaFXPaintable(canvas.getGraphicsContext2D()));
@@ -69,6 +79,8 @@ public class DrawingTool extends Application{
         Draw();
 
         //serializationMediator.save(drawing);
+        //databaseMediator.save(drawing);
+
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
@@ -107,6 +119,14 @@ public class DrawingTool extends Application{
     }
     public JavaFXPaintable getPaintable() {
         return paintable;
+    }
+
+    public DatabaseMediator getDatabaseMediator() {
+        return databaseMediator;
+    }
+
+    public void setDatabaseMediator(DatabaseMediator databaseMediator) {
+        this.databaseMediator = databaseMediator;
     }
 }
 
