@@ -6,6 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.collections.FXCollections?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstController">
    <children>
       <Canvas fx:id="drawingcanvas" height="451.0" layoutX="160.0" layoutY="26.0" width="596.0" />
@@ -29,9 +30,18 @@
         </menus>
       </MenuBar>
       <ListView layoutY="26.0" prefHeight="451.0" prefWidth="159.0" />
-      <ChoiceBox layoutX="-4.0" layoutY="55.0" prefHeight="25.0" prefWidth="159.0" />
-      <ComboBox layoutX="-4.0" layoutY="115.0" prefHeight="25.0" prefWidth="159.0" />
       <Label layoutX="5.0" layoutY="38.0" text="Drawing Item" />
       <Label layoutX="5.0" layoutY="98.0" prefHeight="17.0" prefWidth="41.0" text="Color" />
+      <ComboBox fx:id="DrawItem" layoutX="5.0" layoutY="55.0" prefWidth="150.0" >
+          <items>
+              <FXCollections fx:factory="observableArrayList">
+                <String fx:id="Ovaal" fx:value="Oval"/>
+                <String fx:id="Polygon1" fx:value="Polygon"/>
+                <String fx:id="Image1" fx:value="Image"/>
+                <String fx:id="PaintedText1" fx:value="PaintedText"/>
+              </FXCollections>
+          </items>
+      </ComboBox>
+      <ComboBox fx:id="ColorPicker" layoutX="5.0" layoutY="115.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
