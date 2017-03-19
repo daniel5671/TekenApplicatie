@@ -1,7 +1,4 @@
-import drawing.domain.Drawing;
-import drawing.domain.DrawingItem;
-import drawing.domain.Oval;
-import drawing.domain.Point;
+import drawing.domain.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -75,8 +72,15 @@ public class FirstController implements Initializable {
                 break;
         }
 //        }
-
+        Draw();
         return true;
     }
+    public void Draw() {
+        for (DrawingItem drawingItem : drawing.getItems()) {
+            drawing.paintUsing(new JavaFXPaintable(gc));
+        }
+    }
+ }
 
-}
+
+
