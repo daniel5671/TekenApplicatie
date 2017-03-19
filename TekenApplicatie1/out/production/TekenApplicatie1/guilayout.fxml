@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="755.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FirstController">
+   <children>
+      <Canvas fx:id="drawingcanvas" height="451.0" layoutX="160.0" layoutY="26.0" width="596.0" />
+      <MenuBar layoutX="-2.0" layoutY="2.0" prefHeight="25.0" prefWidth="755.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ListView layoutY="26.0" prefHeight="451.0" prefWidth="159.0" />
+      <ChoiceBox layoutX="-4.0" layoutY="55.0" prefHeight="25.0" prefWidth="159.0" />
+      <ComboBox layoutX="-4.0" layoutY="115.0" prefHeight="25.0" prefWidth="159.0" />
+      <Label layoutX="5.0" layoutY="38.0" text="Drawing Item" />
+      <Label layoutX="5.0" layoutY="98.0" prefHeight="17.0" prefWidth="41.0" text="Color" />
+   </children>
+</AnchorPane>

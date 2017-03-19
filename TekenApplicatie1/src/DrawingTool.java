@@ -3,17 +3,12 @@ import drawing.domain.Drawing;
 import drawing.domain.DrawingItem;
 import drawing.domain.JavaFXPaintable;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.layout.StackPane;
+import javafx.scene.Parent;
 import javafx.stage.Stage;
-import drawing.domain.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.Group;
-
-import java.io.File;
-import java.util.ArrayList;
+import sun.applet.Main;
 
 public class DrawingTool extends Application{
 
@@ -37,6 +32,16 @@ public class DrawingTool extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        Drawing drawing = new Drawing();
+
+        Parent parent =  FXMLLoader.load(getClass().getClassLoader().getResource("guilayout.fxml"));
+        Scene scene = new Scene(parent,700,500);
+        primaryStage.setTitle("TekenApplicatie");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+
+
+ /*
         Canvas canvas = new Canvas(500,500);
 
         Drawing drawing = new Drawing();
@@ -46,9 +51,9 @@ public class DrawingTool extends Application{
 
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        primaryStage.setTitle("TekenApplicatie");
-        Group root = new Group();
 
+        Group root = new Group();
+*/
         //Drawing drawing = serializationMediator.load("drawing.ser");
 /*
         ArrayList<Point>points = new ArrayList<>();
@@ -68,10 +73,10 @@ public class DrawingTool extends Application{
         drawing.addDrawing(paintedtext);
         drawing.addDrawing(image);
 */
-
+/*
         //PaintedText opdracht4 = new PaintedText("(=D1)", "Ariel", new Point(150,150),40,50);
         //drawing.addDrawing(opdracht4);
-        drawing = databaseMediator.load("hallo");
+        //drawing = databaseMediator.load("hallo");
         root.getChildren().add(canvas);
 
         this.setPaintable(new JavaFXPaintable(canvas.getGraphicsContext2D()));
@@ -83,6 +88,7 @@ public class DrawingTool extends Application{
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+*/
     }
 
     public void Draw(){
