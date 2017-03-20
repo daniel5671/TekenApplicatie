@@ -70,7 +70,21 @@ public class FirstController implements Initializable {
         switch((String)DrawItem.getValue()){
             case "Oval" :
                 Oval oval = new Oval(start,end.getX()-start.getX(),end.getY()-start.getY(),1);
-                drawing.addDrawing(oval);
+                if (drawing.getItems().size() >0){
+
+                    for(DrawingItem t  : drawing.getItems()){
+                        if(t.overlaps(oval)){
+                            System.out.println("overlapping");
+                        }
+                        else{
+                            System.out.println("toegevoegd");
+                            drawing.addDrawing(oval);
+                        }
+                }
+                }
+                else {
+                    drawing.addDrawing(oval);
+                }
                 break;
             case "Polygon":
                 break;
