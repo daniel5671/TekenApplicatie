@@ -1,23 +1,29 @@
 import drawing.domain.*;
+import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class FirstController implements Initializable {
     @FXML private Canvas drawingcanvas ;
     @FXML private ComboBox DrawItem;
+    @FXML private ListView listview;
+    @FXML private Button BtnDelete;
 
     private Drawing drawing;
     public Point startingpoint;
     public Point endingpoint;
-    public DrawingTool tool;
-
 
     private GraphicsContext gc;
 
@@ -28,10 +34,6 @@ public class FirstController implements Initializable {
         gc = drawingcanvas.getGraphicsContext2D();
         drawing = new Drawing();
 
-        Oval oval = new Oval(new Point(100,100),100,100,10);
-        drawing.addDrawing(oval);
-
-
         drawingcanvas.addEventHandler(MouseEvent.MOUSE_PRESSED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -39,14 +41,7 @@ public class FirstController implements Initializable {
                 startingpoint = new Point(event.getX(),event.getY());
             }
         });
-/*
-        drawingcanvas.addEventHandler(MouseEvent.MOUSE_DRAGGED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
 
-            }
-        });
-*/
         drawingcanvas.addEventHandler(MouseEvent.MOUSE_RELEASED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
@@ -55,8 +50,21 @@ public class FirstController implements Initializable {
                 addDrawing(startingpoint, endingpoint);
             }
         });
-
+        BtnDelete.setOnAction(new EventHandler<javafx.event.ActionEvent>() {
+            @Override
+            public void handle(javafx.event.ActionEvent event) {
+                deleteDrawingItem(event);
+            }
+        });
     }
+
+        private void deleteDrawingItem(javafx.event.ActionEvent event){
+             DrawingItem todeleteitem = (DrawingItem) listview.getSelectionModel().getSelectedItem();
+             drawing.deleteDrawing(todeleteitem);
+             Draw();
+    }
+
+
     public boolean addDrawing(Point start, Point end ){
 
         switch((String)DrawItem.getValue()){
@@ -71,14 +79,15 @@ public class FirstController implements Initializable {
             case "PaintedText":
                 break;
         }
-//        }
         Draw();
         return true;
     }
+
+
     public void Draw() {
-        for (DrawingItem drawingItem : drawing.getItems()) {
-            drawing.paintUsing(new JavaFXPaintable(gc));
-        }
+        gc.clearRect(0, 0, drawingcanvas.getWidth(), drawingcanvas.getHeight());
+        drawing.paintUsing(new JavaFXPaintable(gc));
+        listview.setItems(drawing.itemsToObserve());
     }
  }
 

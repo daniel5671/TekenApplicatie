@@ -32,10 +32,8 @@ public class DrawingTool extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        Drawing drawing = new Drawing();
-
         Parent parent =  FXMLLoader.load(getClass().getClassLoader().getResource("guilayout.fxml"));
-        Scene scene = new Scene(parent,700,500);
+        Scene scene = new Scene(parent,950,500);
         primaryStage.setTitle("TekenApplicatie");
         primaryStage.setScene(scene);
         primaryStage.show();

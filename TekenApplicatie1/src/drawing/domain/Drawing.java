@@ -1,22 +1,23 @@
 package drawing.domain;
 
 import Interface.Paintable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 
 public class Drawing extends DrawingItem implements Serializable{
     private String name;
-    private ArrayList<DrawingItem>items = new ArrayList<>();
+    private ArrayList<DrawingItem>items;
+    private ObservableList<DrawingItem> observableList;
 
-    public ArrayList<DrawingItem> getItems() {
-        return items;
-    }
-
-    public void setItems(ArrayList<DrawingItem> items) {
-        this.items = items;
+    public void setItems(ObservableList<DrawingItem> list) {
+        this.observableList = list;
     }
 
     public String getName() {
@@ -28,7 +29,8 @@ public class Drawing extends DrawingItem implements Serializable{
     }
 
     public Drawing(){
-
+        items = new ArrayList<>();
+        observableList = FXCollections.observableList(items);
     }
 
     public Drawing(String name, ArrayList<DrawingItem> items) {
@@ -48,6 +50,14 @@ public class Drawing extends DrawingItem implements Serializable{
 
     public boolean alterDrawing(DrawingItem item){
         throw new NotImplementedException();
+    }
+
+    public List<DrawingItem> getItems(){
+        return Collections.unmodifiableList(items);
+    }
+
+    public ObservableList<DrawingItem>itemsToObserve(){
+        return FXCollections.unmodifiableObservableList(observableList);
     }
 
     @Override
