@@ -31,14 +31,17 @@ public abstract class DrawingItem implements Serializable {
     public abstract void paintUsing(Paintable paintable);
 
     public boolean insideBoundingBox(Point point){
-        if(point.getX() >= this.getAnchor().getX() || point.getX()<= this.getAnchor().getX() + this.getWidth() && point.getY() >= this.getAnchor().getY() || point.getY() <= this.getAnchor().getY() + this.getHeight()){
+        if(point.getX() >= this.getAnchor().getX() && point.getX()<= (this.getAnchor().getX() + this.getWidth()) || point.getY() >= this.getAnchor().getY() && point.getY() <= (this.getAnchor().getY() + this.getHeight())){
+
             return true;
         }
         return false;
     }
 
     public boolean overlaps(DrawingItem item){
-        if (insideBoundingBox(item.getAnchor())){
+        Point Startingpoint = item.getAnchor();
+        Point Endpoint = new Point(item.getAnchor().getX() + item.getWidth(),item.getAnchor().getY() + item.getHeight());
+        if (insideBoundingBox(Startingpoint) && insideBoundingBox(Endpoint)){
             return true;
         }
         return false;

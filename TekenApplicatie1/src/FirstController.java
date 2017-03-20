@@ -70,21 +70,16 @@ public class FirstController implements Initializable {
         switch((String)DrawItem.getValue()){
             case "Oval" :
                 Oval oval = new Oval(start,end.getX()-start.getX(),end.getY()-start.getY(),1);
-                if (drawing.getItems().size() >0){
+                if (drawing.getItems().size()>0){
+                    if (checkoverlap(oval)){
+                        System.out.println("Overlap");
+                    }
+                    else{
+                        drawing.addDrawing(oval);
+                    }
 
-                    for(DrawingItem t  : drawing.getItems()){
-                        if(t.overlaps(oval)){
-                            System.out.println("overlapping");
-                        }
-                        else{
-                            System.out.println("toegevoegd");
-                            drawing.addDrawing(oval);
-                        }
                 }
-                }
-                else {
-                    drawing.addDrawing(oval);
-                }
+                else drawing.addDrawing(oval);
                 break;
             case "Polygon":
                 break;
@@ -97,6 +92,17 @@ public class FirstController implements Initializable {
         return true;
     }
 
+    public boolean checkoverlap(DrawingItem overlappingitem){
+        if (drawing.getItems().size() >0){
+            for(DrawingItem t  : drawing.getItems()) {
+                if (t.overlaps(overlappingitem)) {
+                    System.out.println("overlapping");
+                    return true;
+                }
+            }
+        }
+            return false;
+    }
 
     public void Draw() {
         gc.clearRect(0, 0, drawingcanvas.getWidth(), drawingcanvas.getHeight());
