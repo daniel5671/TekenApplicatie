@@ -46,5 +46,7 @@
       <ComboBox fx:id="ColorPicker" layoutX="5.0" layoutY="115.0" prefWidth="150.0" />
       <ListView fx:id="listview" layoutX="738.0" layoutY="28.0" prefHeight="323.0" prefWidth="200.0" />
       <Button fx:id="BtnDelete" layoutX="812.0" layoutY="369.0" mnemonicParsing="false" text="Delete" />
+      <Button fx:id ="Save" layoutY="165.0" mnemonicParsing="false" text="Save" />
+      <Button fx:id ="Load" layoutX="103.0" layoutY="165.0" mnemonicParsing="false" text="Load" />
    </children>
 </AnchorPane>

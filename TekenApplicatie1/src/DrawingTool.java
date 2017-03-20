@@ -40,49 +40,23 @@ public class DrawingTool extends Application{
 
 
  /*
-        Canvas canvas = new Canvas(500,500);
-
         Drawing drawing = new Drawing();
         SerializationMediator serializationMediator = new SerializationMediator();
         DatabaseMediator databaseMediator = new DatabaseMediator();
-
-
         GraphicsContext gc = canvas.getGraphicsContext2D();
-
-
         Group root = new Group();
 */
         //Drawing drawing = serializationMediator.load("drawing.ser");
+
 /*
-        ArrayList<Point>points = new ArrayList<>();
-        points.add(new Point(100, 100));
-        points.add(new Point(200, 100));
-        points.add(new Point(200, 50));
-
-
-        Oval oval = new Oval(new Point(100,100),100,100,10);
-        Polygon polygon = new Polygon(points,5);
-        PaintedText paintedtext = new PaintedText("hallo", "Ariel", new Point(150,150),40,50);
-        Image image = new Image(new File("./res/Spoof.png"),new Point(300,300),30,50);
-
-        //add drawings to list
-        drawing.addDrawing(oval);
-        drawing.addDrawing(polygon);
-        drawing.addDrawing(paintedtext);
-        drawing.addDrawing(image);
-*/
-/*
-        //PaintedText opdracht4 = new PaintedText("(=D1)", "Ariel", new Point(150,150),40,50);
-        //drawing.addDrawing(opdracht4);
-        //drawing = databaseMediator.load("hallo");
         root.getChildren().add(canvas);
 
         this.setPaintable(new JavaFXPaintable(canvas.getGraphicsContext2D()));
         this.setDrawing(drawing);
         Draw();
 
-        //serializationMediator.save(drawing);
-        //databaseMediator.save(drawing);
+        serializationMediator.save(drawing);
+        databaseMediator.save(drawing);
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
